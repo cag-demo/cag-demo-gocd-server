@@ -25,7 +25,7 @@ goscript:
 goserver:
   image: 'gocd/gocd-server:latest'
   environment:
-    - AGENT_KEY=388b633a88de126531afa41eff9aa69e
+    - AGENT_KEY=ui5jl63GtR38IqXQ75e4O33B17oO6jQf
   ports:
     - '28153:8153'
   tags:
