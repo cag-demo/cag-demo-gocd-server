@@ -1,0 +1,38 @@
+goagent:
+  image: 'tutum.co/cag-demo/goagent:latest'
+  deployment_strategy: high_availability
+  links:
+    - goserver
+    - repository
+  tags:
+    - go
+  target_num_containers: 2
+  volumes:
+    - '/var/run/docker.sock:/var/run/docker.sock'
+  volumes_from:
+    - godata
+    - goscript
+godata:
+  image: 'tutum.co/cag-demo/godata:latest'
+  deployment_strategy: every_node
+  tags:
+    - go
+goscript:
+  image: 'tutum.co/cag-demo/gocd-scripts:latest'
+  deployment_strategy: every_node
+  tags:
+    - go
+goserver:
+  image: 'gocd/gocd-server:latest'
+  environment:
+    - AGENT_KEY=388b633a88de126531afa41eff9aa69e
+  ports:
+    - '28153:8153'
+  tags:
+    - go
+  volumes_from:
+    - godata
+repository:
+  image: 'mattgruter/artifactory:latest'
+  tags:
+    - go
