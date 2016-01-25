@@ -1,5 +1,5 @@
 goagent:
-  image: 'tutum.co/cag-demo/goagent:latest'
+  image: 'tutum.co/cagdemo/gocd-agent:latest'
   deployment_strategy: high_availability
   links:
     - goserver
@@ -13,12 +13,12 @@ goagent:
     - godata
     - goscript
 godata:
-  image: 'tutum.co/cag-demo/godata:latest'
+  image: 'tutum.co/cagdemo/gocd-data:latest'
   deployment_strategy: every_node
   tags:
     - go
 goscript:
-  image: 'tutum.co/cag-demo/gocd-scripts:latest'
+  image: 'tutum.co/cagdemo/gocd-scripts:latest'
   deployment_strategy: every_node
   tags:
     - go
