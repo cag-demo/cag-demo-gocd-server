@@ -16,7 +16,7 @@ RUN wget -O /tmp/go-agent.deb https://download.go.cd/binaries/15.2.0-2248/deb/go
   	apt-get install -y curl git && \
     curl -sSL https://get.docker.com/ | sh && \
     apt-get install -y --force-yes python-pip jq docker-engine=1.9.1-0~jessie && \
-    pip install tutum && \
+    pip install docker-cloud && \
   	apt-get clean # Clean up
 
 
