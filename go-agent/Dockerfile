@@ -9,7 +9,8 @@ MAINTAINER Mikael Sennerholm <mikael@sennerholm.net>
 
 # Download and install Go-agent 15.1.0, curl/git/jq and docker, totum
 # http://download.go.cd/gocd-deb/go-agent-15.1.0-1863.deb
-RUN wget -O /tmp/go-agent.deb http://download.go.cd/gocd-deb/go-agent-15.2.0-2248.deb && \
+# new url https://download.go.cd/binaries/15.2.0-2248/deb/go-agent-15.2.0-2248.deb
+RUN wget -O /tmp/go-agent.deb https://download.go.cd/binaries/15.2.0-2248/deb/go-agent-15.2.0-2248.deb && \
 	dpkg -i /tmp/go-agent.deb && \
 	rm -f /tmp/go-agent.deb && \
   	apt-get install -y curl git && \
